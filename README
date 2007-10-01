@@ -1,7 +1,7 @@
 PRIVATE MESSAGE PLUGIN
 ==============================
 
-A plugin that adds iphone support to Beast.
+A plugin that adds iPhone support to Beast.
 
 
 INSTALL INSTRUCTIONS
@@ -14,11 +14,11 @@ INSTALL INSTRUCTIONS
 
 2) Run the following command:
 
-     script/runner 'Beast::Plugins::IPhone.install'
+     script/runner 'Beast::Plugins::Iphone.install'
 
 3) Add the plugin to the list of Beast plugins to be initialized.  If you this is
    the first Beast plugin you can initialize plugins by creating a plugins.rb file
    in config/initializers and add the following line(s):
    
-     Beast::Plugin.initialize_plugins 'Beast::Plugins::IPhone'
+     Beast::Plugin.initialize_plugins 'Beast::Plugins::Iphone'
 

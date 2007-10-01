@@ -1,0 +1,6 @@
+<%= iui_menu_start 'Topics' %>
+	<% @topics.each do |topic| -%>
+    <li><%= link_to(topic_title(topic), :action => 'topic', :id => topic) %></li>
+	<% end -%>
+	<%= iui_menu_next(@topics, 'Next 10 Topics'[]) %>
+<%= iui_menu_end %>

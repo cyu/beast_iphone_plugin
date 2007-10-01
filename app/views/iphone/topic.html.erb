@@ -1,0 +1,18 @@
+<%= iui_menu_start(@posts.first.topic_title) %>
+  <% @posts.each do |post| -%>
+    <li class="hentry">
+      <div class="entry-metadata">
+        <span class="author vcard fn"><%= h(@users[post.user_id].display_name) %></span> &mdash;
+        <abbr class="updated" title="<%= post.created_at.xmlschema %>">
+        <% if post.created_at > Time.now.utc-24.hours%>
+        <%= time_ago_in_words(post.created_at).sub(/about /, '') %>
+        <% else %>
+        <%= post.created_at.strftime("%b %e, %Y"[:date_format])%>
+        <% end %>
+        </abbr>
+      </div>
+      <div class="entry-content"><%= post.body_html %></div>
+	</li>
+  <% end -%>
+  <%= iui_menu_next(@posts, 'Next 10 Posts'[]) %>
+<%= iui_menu_end -%>
