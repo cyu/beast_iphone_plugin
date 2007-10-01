@@ -8,6 +8,10 @@ module IphoneHelper
     s.join ' '
   end
 
+  def application_title
+    'Beast'[:beast_title]
+  end
+
   def iui_menu_start(title)
     "<ul title=\"#{title}\">" unless params[:page]
   end

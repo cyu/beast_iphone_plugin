@@ -12,7 +12,7 @@ class IphoneController < ApplicationController
   layout false
 
   def index
-    @forums = Forum.find(:all, :order => "position")
+    @forums = find_forums
   end
   
   def forum
@@ -26,5 +26,11 @@ class IphoneController < ApplicationController
         :page => params[:page], :count => {:select => "#{Post.table_name}.id"}))
     @users = User.find(:all, :select => 'distinct *', :conditions => ['id in (?)', @posts.collect(&:user_id).uniq]).index_by(&:id)
   end
+  
+  protected
+
+    def find_forums
+      Forum.find(:all, :order => "position")
+    end
 
 end

@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title><%= 'Beast'[:beast_title] %></title>
+<title><%= application_title %></title>
 <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
 <style type="text/css" media="screen">@import "/iui/iui.css";</style>
 <style type="text/css" media="screen">@import "/stylesheets/iphone.css";</style>
@@ -17,7 +17,7 @@
         <!--a class="button" href="#searchForm">Search</a-->
     </div>
     
-    <ul id="forums" title="<%= 'Beast'[:beast_title] %>" selected="true">
+    <ul id="forums" title="<%= application_title %>" selected="true">
     	<% @forums.each do |forum| -%>
         <li><%= link_to(forum.name, :action => 'forum', :id => forum) %></li>
 		<% end -%>
